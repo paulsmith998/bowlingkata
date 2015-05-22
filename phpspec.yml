@@ -1,0 +1,4 @@
+suites:
+    cdt-bowlingkata:
+        namespace: Cdt\BowlingKata
+        psr4_prefix: Cdt\BowlingKata

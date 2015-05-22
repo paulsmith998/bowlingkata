@@ -1,0 +1,23 @@
+{
+    "name": "cdt/bowlingkata",
+    "require": {
+        "php": "~5.5",
+        "behat/behat": "~3.0",
+        "phpunit/phpunit": "~4.6",
+        "phpspec/phpspec": "~2.2"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "Cdt\\BowlingKata\\": ["src", "test"]
+        }
+    },
+    "authors": [
+        {
+            "name": "Chris Emerson",
+            "email": "chris.emerson@cpwonlinesolutions.com"
+        }
+    ]
+}

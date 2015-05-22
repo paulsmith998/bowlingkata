@@ -1,0 +1,27 @@
+<phpunit
+        bootstrap="vendor/autoload.php"
+        colors="true"
+        convertErrorsToExceptions="true"
+        convertWarningsToExceptions="true"
+        convertNoticesToExceptions="true"
+        timeoutForSmallTests="1"
+        timeoutForMediumTests="1"
+        timeoutForLargeTests="1"
+        beStrictAboutTestsThatDoNotTestAnything="true"
+        beStrictAboutOutputDuringTests="true">
+    <php>
+        <ini name="error_reporting" value="E_ALL"/>
+    </php>
+
+    <testsuites>
+        <testsuite name="CDT Bowling Kata">
+            <directory suffix="Test.php">test</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <blacklist>
+            <directory>vendor</directory>
+        </blacklist>
+    </filter>
+</phpunit>
