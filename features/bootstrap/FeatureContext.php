@@ -2,6 +2,7 @@
 use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
+use Cdt\BowlingKata\BowlingGame;
 use PHPUnit_Framework_Assert as Assert;
 
 /**
@@ -9,27 +10,32 @@ use PHPUnit_Framework_Assert as Assert;
  */
 class FeatureContext implements Context, SnippetAcceptingContext
 {
+    /** @var BowlingGame */
+    private $bowlingGame;
+
+    private $score;
+
     /**
      * @Given I have started a new game of bowling
      */
     public function iHaveStartedANewGameOfBowling()
     {
-        throw new PendingException();
+        $this->bowlingGame = new BowlingGame();
     }
 
     /**
-     * @When I roll a sequence of balls :arg1
+     * @When I roll a sequence of balls :rolls
      */
-    public function iRollASequenceOfBalls($arg1)
+    public function iRollASequenceOfBalls($rolls)
     {
-        throw new PendingException();
+        $this->score = $this->bowlingGame->score($rolls);
     }
 
     /**
-     * @Then my score should be :arg1
+     * @Then my score should be :score
      */
-    public function myScoreShouldBe($arg1)
+    public function myScoreShouldBe($score)
     {
-        throw new PendingException();
+        Assert::assertEquals($score, $this->score);
     }
 }
